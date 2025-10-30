@@ -7,9 +7,8 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+
 import MenuItem from "@mui/material/MenuItem";
 
 const pages = ["Home", "Products", "About", "Contact"];
@@ -91,6 +90,12 @@ function AppHeader() {
                   <Typography sx={{ textAlign: "center" }}>{page}</Typography>
                 </MenuItem>
               ))}
+              <Box>
+                <Button sx={{ border: 2, color: "#000", m: 2 }}>Login</Button>
+                <Button sx={{ border: 2, color: "#000", m: 2 }}>
+                  Register
+                </Button>
+              </Box>
             </Menu>
           </Box>
 
@@ -121,8 +126,7 @@ function AppHeader() {
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
             <Button sx={{ border: 2, color: "#000", m: 2 }}>Login</Button>
             <Button sx={{ border: 2, color: "#000", m: 2 }}>Register</Button>
           </Box>

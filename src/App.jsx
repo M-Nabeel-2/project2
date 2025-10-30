@@ -1,26 +1,29 @@
 import { useState } from "react";
 import AppHeader from "./components/AppHeader";
 import { Hero } from "./components/Hero";
-import { Products } from "./components/Products";
 import { Contact } from "./components/Contact";
 import Hovercart from "./components/Hovercart";
 import Box from "@mui/material/Box";
-function App() {
-  const [count, setCount] = useState(0);
+import Products from "./components/Products";
+import { BrowserRouter, Route, Routes } from "react-router";
+import { Layout } from "./components/Layout";
+import { Home } from "./components/Home";
 
+
+
+
+function App() {
+  
   return (
-    <Box className="relative">
-      <AppHeader />
-      <Hero />
-      <Products />
-      
-      <Box className="absolute right-0 top-1/2">
-        
-        <Hovercart />
-        </Box> 
-      <Contact />
-      
-    </Box>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -11,9 +11,16 @@ import Grid from "@mui/material/Grid";
 import ProductsDetail from "./ProductsDetail";
 import { useState } from "react";
 
-export const Products = () => {
+const Products = () => {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const [currentProductId, setcurrentProductId] = useState({});
+
+  const handleOpen = (ProductsDetails) => {
+    // console.log(ProductsDetails);
+    setcurrentProductId(ProductsDetails.id);
+    setOpen(true);
+  };
+
   const handleClose = () => setOpen(false);
 
   return (
@@ -41,30 +48,57 @@ export const Products = () => {
             gap: 2,
           }}
         >
-          <Button sx={{ border: 2, color: "#000" }} onClick={open}>
+          <Button
+            className="shrink-0"
+            sx={{ border: 2, color: "#000" }}
+            onClick={open}
+          >
             All
           </Button>
-          <Button sx={{ border: 2, color: "#000" }}>Men's Clothes</Button>
-          <Button sx={{ border: 2, color: "#000" }}>Women's Clothes</Button>
-          <Button sx={{ border: 2, color: "#000" }}>Jewelry</Button>
-          <Button sx={{ border: 2, color: "#000" }}>Electronics</Button>
+          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+            Men's Clothes
+          </Button>
+          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+            Women's Clothes
+          </Button>
+          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+            Jewelry
+          </Button>
+          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+            Electronics
+          </Button>
         </Box>
-        <Box sx={{ flexGrow: 7 }}>
+        <Box sx={{ flexGrow: 2 }}>
           <Grid container spacing={4} marginLeft={10}>
             {ProductsD?.map((product) => {
               return (
                 <Card
                   key={product.id}
-                  sx={{ maxWidth: 240, ml: 4, mt: 3, boxShadow: "#000" }}
+                  sx={{
+                    maxWidth: 280,
+                    ml: 8,
+                    mt: 3,
+                    display: "-ms-flexbox",
+                    boxShadow: "#000",
+                  }}
+                  className="shrink-0"
                 >
                   <CardMedia
-                    onClick={handleOpen}
+                    sx={{
+                      width: 180,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignContent: "center",
+                      ml: 8,
+                      mt: 3,
+                    }}
+                    onClick={() => handleOpen(product)}
                     className="cursor-pointer"
                     component="img"
                     alt="green iguana"
                     height="80"
                     padding="40px"
-                    image={product?.productimage}
+                    image={product?.img}
                   />
                   <CardContent>
                     <Typography
@@ -89,8 +123,7 @@ export const Products = () => {
                         justifyContent: "center",
                       }}
                     >
-                      Your perfect pack for everyday use and walks in the
-                      forest. Stash your laptop up to 15 in...
+                      {product?.text}
                     </Typography>
                   </CardContent>
                   <hr />
@@ -116,6 +149,7 @@ export const Products = () => {
                   >
                     <Button
                       size="small"
+                      onClick={handleOpen}
                       sx={{
                         backgroundColor: "#000",
                         color: "#ffffffff",
@@ -139,11 +173,20 @@ export const Products = () => {
                   </CardActions>
                 </Card>
               );
-            })}{" "}
+            })}
           </Grid>
         </Box>
       </Box>
-      <ProductsDetail open={open} handleClose={handleClose} />
+
+      {open && (
+        <ProductsDetail
+          open={open}
+          handleClose={handleClose}
+          currentProductId={currentProductId}
+        />
+      )}
     </>
   );
 };
+
+export default Products;

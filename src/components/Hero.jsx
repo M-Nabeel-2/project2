@@ -23,16 +23,26 @@ export const Hero = () => {
           variant="subtitle1"
           sx={{
             fontSize: "20px",
-            fontFamily:"sans-serif",
+            fontFamily: "sans-serif",
             ml: 20,
             color: "whitesmoke",
+            display: { xs: "none", md: "flex" },
           }}
         >
           This is a wider card with supporting text below as a natural lead-in
           to additional content. This content is a little bit longer.
         </Typography>
       </Box>
-      <Box sx={{ width: "1300px", mt: 2, ml: 8, mr: 7, borderRadius: 20 }}>
+      <Box
+        className=" break-after-auto"
+        sx={{
+          width: "1300px",
+          mt: 2,
+          ml: 8,
+          mr: 7,
+          borderRadius: 20,
+        }}
+      >
         <img src={Hero1} />
       </Box>
     </Box>

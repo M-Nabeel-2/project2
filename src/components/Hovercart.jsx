@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { createNodeImportMeta } from "vite/module-runner";
+import Button from "@mui/material/Button";
 
-const Hovercart = (props) => {
-  const { open, handleClose } = props;
+const Hovercart = () => {
   return (
     <Box
       className="rounded-l-lg"
@@ -19,12 +19,12 @@ const Hovercart = (props) => {
         display: "flex",
       }}
     >
-      <Typography
+      <Button
         variant="body2"
         sx={{ display: "flex", color: "#b9e91aff", justifyContent: "center" }}
       >
         <ShoppingCartIcon /> Cart
-      </Typography>
+      </Button>
     </Box>
   );
 };
