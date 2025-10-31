@@ -6,6 +6,7 @@ import { Home } from "./components/Home";
 import { Register } from "./components/auth/Register";
 import About from "./components/About";
 import Products from "./components/Products";
+import { Login } from "./components/auth/Login";
 
 function App() {
   return (
@@ -39,9 +40,8 @@ function App() {
               }
             ></Route>
             <Route path="/register" element={<Register />}></Route>
+            <Route path="/Login" element={<Login />}></Route>
           </Route>
-
-          {/*  <Route path="/Login" element={<Login />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>
