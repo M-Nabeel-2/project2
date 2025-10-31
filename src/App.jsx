@@ -1,26 +1,47 @@
 import { useState } from "react";
-import AppHeader from "./components/AppHeader";
-import { Hero } from "./components/Hero";
 import { Contact } from "./components/Contact";
-import Hovercart from "./components/Hovercart";
-import Box from "@mui/material/Box";
-import Products from "./components/Products";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { Layout } from "./components/Layout";
 import { Home } from "./components/Home";
-
-
-
+import { Register } from "./components/auth/Register";
+import About from "./components/About";
+import Products from "./components/Products";
 
 function App() {
-  
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />}></Route>
+            <Route path="Home" element={<Home />}></Route>
+            <Route
+              path="Prodcuts"
+              element={
+                <h1>
+                  <Products />
+                </h1>
+              }
+            ></Route>
+            <Route
+              path="About"
+              element={
+                <h1>
+                  <About />
+                </h1>
+              }
+            ></Route>
+            <Route
+              path="Contact"
+              element={
+                <h1>
+                  <Contact />
+                </h1>
+              }
+            ></Route>
+            <Route path="/register" element={<Register />}></Route>
           </Route>
+
+          {/*  <Route path="/Login" element={<Login />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>

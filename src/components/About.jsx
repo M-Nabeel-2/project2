@@ -17,7 +17,7 @@ const About = () => {
             display: "flex",
             justifyContent: "center",
             alignContent: "center",
-            mt: 4,
+            mt: 15,
           }}
           variant="h3"
         >
@@ -65,9 +65,9 @@ const About = () => {
           </Typography>
         </Box>
         <Box sx={{ flexGrow: 2, mt: 3 }}>
-          <Grid container spacing={3}>
+          <Grid container spacing={3.4}>
             <Card sx={{ ml: 3 }}>
-              <Box sx={{ width: 320 }}>
+              <Box sx={{ width: 320, border: 2 }}>
                 <img src={card1} />
               </Box>
               <Box>
@@ -80,7 +80,7 @@ const About = () => {
                     justifyContent: "center",
                     alignContent: "center",
                     padding: 2,
-                    mb: 3,
+                    border: 2,
                   }}
                 >
                   Mens's Clothing
@@ -88,7 +88,7 @@ const About = () => {
               </Box>
             </Card>
             <Card>
-              <Box sx={{ width: 320 }}>
+              <Box sx={{ width: 320, border: 2 }}>
                 <img src={card2} />
               </Box>
               <Box>
@@ -102,6 +102,7 @@ const About = () => {
                     alignContent: "center",
                     padding: 2,
                     mb: 3,
+                    border: 2,
                   }}
                 >
                   Women's Clothing
@@ -109,7 +110,7 @@ const About = () => {
               </Box>
             </Card>
             <Card>
-              <Box sx={{ width: 320 }}>
+              <Box sx={{ width: 320, border: 2 }}>
                 <img src={card3} />
               </Box>
               <Box>
@@ -123,6 +124,7 @@ const About = () => {
                     alignContent: "center",
                     padding: 2,
                     mb: 3,
+                    border: 2,
                   }}
                 >
                   Jewelery
@@ -130,7 +132,7 @@ const About = () => {
               </Box>
             </Card>
             <Card>
-              <Box sx={{ width: 320 }}>
+              <Box sx={{ width: 320, border: 2 }}>
                 <img src={card4} />
               </Box>
               <Box>
@@ -144,6 +146,7 @@ const About = () => {
                     alignContent: "center",
                     padding: 2,
                     mb: 3,
+                    border: 2,
                   }}
                 >
                   Electronics

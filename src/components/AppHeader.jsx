@@ -1,138 +1,203 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { Link, NavLink } from "react-router";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 
-import MenuItem from "@mui/material/MenuItem";
+const drawerWidth = 240;
 
-const pages = ["Home", "Products", "About", "Contact"];
+function AppHeader(props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-function AppHeader() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        <Link to="Home"> Emporium Mart</Link>
+      </Typography>
+      <Divider />
+      <Box
+        className="items-center gap-5 flex-col"
+        sx={{
+          display: { xs: "block" },
+          display: "flex",
+          color: "#000",
+          justifyContent: "justify-between",
+          alignItems: "center",
+        }}
+      >
+        <NavLink
+          to="/Home"
+          className={({ isActive }) =>
+            isActive ? "text-[#A6E22E] font-bold px-3" : "text-gray-500 px-3"
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/Products"
+          className={({ isActive }) =>
+            isActive ? "text-[#A6E22E] font-bold px-3" : "text-gray-500 px-3"
+          }
+        >
+          Products
+        </NavLink>
+        <NavLink
+          to="/About"
+          className={({ isActive }) =>
+            isActive ? "text-[#A6E22E] font-bold px-3" : "text-gray-500 px-3"
+          }
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="/Contact"
+          className={({ isActive }) =>
+            isActive ? "text-[#A6E22E] font-bold px-3" : "text-gray-500 px-3"
+          }
+        >
+          Contact
+        </NavLink>
+      </Box>
+      <Box>
+        <Button className="shrink-0" sx={{ border: 2, color: "#000", m: 1 }}>
+          <NavLink to="/Login"> Login</NavLink>
+        </Button>
+        <Button className="shrink-0" sx={{ border: 2, color: "#000", m: 1 }}>
+          <NavLink to="/Register"> Register</NavLink>
+        </Button>
+      </Box>
+    </Box>
+  );
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#F8F9FA" }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              textDecoration: "none",
-              color: "black",
-            }}
-          >
-            Emporium Mart
-          </Typography>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              color: "black",
-              display: { xs: "flex", md: "none" },
-            }}
-          >
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <AppBar
+        component="nav"
+        elevation={0}
+        sx={{ backgroundColor: "#f5f5f5ff", color: "#000" }}
+      >
+        <Toolbar className="flex justify-between">
+          <Box className="flex items-center gap-5">
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="#000"
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
-              ))}
-              <Box>
-                <Button sx={{ border: 2, color: "#000", m: 2 }}>Login</Button>
-                <Button sx={{ border: 2, color: "#000", m: 2 }}>
-                  Register
-                </Button>
-              </Box>
-            </Menu>
+              <Link to="Home"> Emporium Mart</Link>
+            </Typography>
           </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              color: "#000",
-              textDecoration: "none",
-            }}
-          >
-            Emporium Mart
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#000", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+          <Box className sx={{ display: { xs: "none", sm: "block" } }}>
+            <NavLink
+              to="/Home"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#A6E22E] font-bold px-3"
+                  : "text-gray-500 px-3"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/Products"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#A6E22E] font-bold px-3"
+                  : "text-gray-500 px-3"
+              }
+            >
+              Products
+            </NavLink>
+            <NavLink
+              to="/About"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#A6E22E] font-bold px-3"
+                  : "text-gray-500 px-3"
+              }
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/Contact"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#A6E22E] font-bold px-3"
+                  : "text-gray-500 px-3"
+              }
+            >
+              Contact
+            </NavLink>
           </Box>
-          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
-            <Button sx={{ border: 2, color: "#000", m: 2 }}>Login</Button>
-            <Button sx={{ border: 2, color: "#000", m: 2 }}>Register</Button>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <Button
+              className="shrink-0"
+              sx={{ border: 2, color: "#000", mr: 2 }}
+            >
+              <NavLink to="/Login"> Login</NavLink>
+            </Button>
+            <Button
+              className="shrink-0"
+              sx={{ border: 2, color: "#000", mr: 2 }}
+            >
+              <NavLink to="/Register"> Register</NavLink>
+            </Button>
           </Box>
         </Toolbar>
-      </Container>
-    </AppBar>
+      </AppBar>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
+    </Box>
   );
 }
+
 export default AppHeader;

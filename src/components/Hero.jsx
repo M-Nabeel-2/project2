@@ -37,7 +37,7 @@ export const Hero = () => {
         className=" break-after-auto"
         sx={{
           width: "1300px",
-          mt: 2,
+          mt: 15,
           ml: 8,
           mr: 7,
           borderRadius: 20,

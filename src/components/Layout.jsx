@@ -6,7 +6,6 @@ export const Layout = () => {
   return (
     <>
       <AppHeader />
-    
 
       <Outlet />
     </>

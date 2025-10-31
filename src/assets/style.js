@@ -10,5 +10,3 @@ export const styleProductDetail = {
   p: 4,
 };
 export default styleProductDetail;
-
-const sx={ maxWidth: 280, ml: 8, mt: 3, boxShadow: "#000" }
