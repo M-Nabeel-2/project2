@@ -41,7 +41,8 @@ import wm4a from "../assets/img/wm4a.webp";
 import wm5a from "../assets/img/wm5a.webp";
 import wm6a from "../assets/img/wm6a.webp";
 
-const ProductsD = [
+
+const ProductsD = [ 
   {
     id: 1,
     img: Bag,

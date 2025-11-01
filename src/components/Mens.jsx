@@ -10,89 +10,91 @@ import Bag from "../assets/img/bag.webp";
 
 const Mens = () => {
   return (
-    <Box>
-      <Card sx={{ maxWidth: 360, ml: 4, boxShadow: "#000" }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="80"
-          padding="40px"
-          image={Bag}
-        />
-        <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            sx={{
-              padding: 2,
-              display: "center",
-              justifyContent: "center",
-              alignContent: "center",
-            }}
-          >
-            Mens Casual ...
-          </Typography>
-          <Typography
+    <>
+      <Box>
+        <Card sx={{ maxWidth: 360, ml: 4, boxShadow: "#000" }}>
+          <CardMedia
+            component="img"
+            alt="green iguana"
+            height="80"
+            padding="40px"
+            image={Bag}
+          />
+          <CardContent>
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="div"
+              sx={{
+                padding: 2,
+                display: "center",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              Mens Casual ...
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "text.secondary",
+                padding: 2,
+                display: "center",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              Slim-fitting style, contrast raglan long sleeve, three-button
+              henley placket, light weight...
+            </Typography>
+          </CardContent>
+          <hr />
+          <Box
             variant="body2"
             sx={{
-              color: "text.secondary",
-              padding: 2,
-              display: "center",
+              padding: 1,
+              display: "flex",
               justifyContent: "center",
               alignContent: "center",
             }}
           >
-            Slim-fitting style, contrast raglan long sleeve, three-button henley
-            placket, light weight...
-          </Typography>
-        </CardContent>
-        <hr />
-        <Box
-          variant="body2"
-          sx={{
-            padding: 1,
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          $ 22.3
-        </Box>
-        <hr />
-        <CardActions
-          sx={{
-            padding: 2,
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          <Button
-            size="small"
+            $ 22.3
+          </Box>
+          <hr />
+          <CardActions
             sx={{
-              backgroundColor: "#000",
-              color: "#ffffffff",
-              padding: "8px",
-              borderRadius: "14px",
+              padding: 2,
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
             }}
           >
-            Buy Now
-          </Button>
-          <Button
-            size="small"
-            sx={{
-              backgroundColor: "#000",
-              color: "#ffffffff",
-              padding: "8px",
-              borderRadius: "14px",
-            }}
-          >
-            Add To Cart
-          </Button>
-        </CardActions>
-      </Card>
-    </Box>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#000",
+                color: "#ffffffff",
+                padding: "8px",
+                borderRadius: "14px",
+              }}
+            >
+              Buy Now
+            </Button>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#000",
+                color: "#ffffffff",
+                padding: "8px",
+                borderRadius: "14px",
+              }}
+            >
+              Add To Cart
+            </Button>
+          </CardActions>
+        </Card>
+      </Box>
+    </>
   );
 };
 

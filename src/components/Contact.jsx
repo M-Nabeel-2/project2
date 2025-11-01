@@ -53,7 +53,7 @@ export const Contact = () => {
             <div className="text-center mt-4">
               <Button
                 className="shrink-0"
-                sx={{ border: 2, color: "#000", background: "#878787ff" }}
+                sx={{ border: 2, color: "#e5ded6ff", background: "#3b4743ff" }}
               >
                 Send
               </Button>

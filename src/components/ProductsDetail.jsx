@@ -1,12 +1,10 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { useState } from "react";
 import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
-import styleproductDetails from "../assets/style";
-import Bag from "../assets/img/Bag.webp";
+import styleproductDetail from "../assets/style";
 import ProductsD from "../utils/DummyData";
 import Grid from "@mui/material/Grid";
 import StarIcon from "@mui/icons-material/Star";
@@ -47,7 +45,7 @@ const ProductsDetail = (props) => {
         }}
       >
         <Fade in={open}>
-          <Box fontStyle={styleproductDetails}>
+          <Box fontStyle={styleproductDetail}>
             {selectedProduct ? (
               <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={0}>

@@ -33,7 +33,7 @@ function AppHeader(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{ my: 2, fontWeight: "bold" }}>
         <Link to="Home"> Emporium Mart</Link>
       </Typography>
       <Divider />
@@ -84,7 +84,7 @@ function AppHeader(props) {
         <Badge
           badgeContent={ProductsDD?.length}
           color="primary"
-          className="mx-5"
+          className="mx-4"
         >
           <AddShoppingCartIcon />
         </Badge>
@@ -123,7 +123,11 @@ function AppHeader(props) {
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              sx={{
+                flexGrow: 1,
+                fontWeight: "bold",
+                display: { xs: "none", sm: "block" },
+              }}
             >
               <Link to="Home"> Emporium Mart</Link>
             </Typography>
@@ -133,7 +137,7 @@ function AppHeader(props) {
               to="/Home"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#A6E22E] font-bold px-3"
+                  ? "text-[#41A67E] font-bold px-3"
                   : "text-gray-500 px-3"
               }
             >
@@ -143,7 +147,7 @@ function AppHeader(props) {
               to="/Products"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#A6E22E] font-bold px-3"
+                  ? "text-[#41A67E] font-bold px-3"
                   : "text-gray-500 px-3"
               }
             >
@@ -153,7 +157,7 @@ function AppHeader(props) {
               to="/About"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#A6E22E] font-bold px-3"
+                  ? "text-[#41A67E] font-bold px-3"
                   : "text-gray-500 px-3"
               }
             >
@@ -163,7 +167,7 @@ function AppHeader(props) {
               to="/Contact"
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#A6E22E] font-bold px-3"
+                  ? "text-[#41A67E] font-bold px-3"
                   : "text-gray-500 px-3"
               }
             >
