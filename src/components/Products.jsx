@@ -10,13 +10,17 @@ import ProductsD from "../utils/DummyData";
 import Grid from "@mui/material/Grid";
 import ProductsDetail from "./ProductsDetail";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-const Products = () => {
+const Products = (props) => {
+  const { setCartProducits } = props;
+
+  const { Products: ProductsDD } = useSelector((state) => state.cart);
+
   const [open, setOpen] = useState(false);
   const [currentProductId, setcurrentProductId] = useState({});
 
   const handleOpen = (ProductsDetails) => {
-    // console.log(ProductsDetails);
     setcurrentProductId(ProductsDetails.id);
     setOpen(true);
   };
@@ -32,7 +36,7 @@ const Products = () => {
             justifyContent: "center",
             alignContent: "center",
             marginTop: 3,
-            mt: 7,
+            mt: 10,
           }}
         >
           <Typography variant="h4">Latest Products</Typography>
@@ -70,7 +74,7 @@ const Products = () => {
         </Box>
         <Box sx={{ flexGrow: 2 }}>
           <Grid container spacing={4} marginLeft={10}>
-            {ProductsD?.map((product) => {
+            {ProductsDD?.map((product) => {
               return (
                 <Card
                   key={product.id}
@@ -149,7 +153,7 @@ const Products = () => {
                   >
                     <Button
                       size="small"
-                      onClick={handleOpen}
+                      onClick={() => handleOpen(product)}
                       sx={{
                         backgroundColor: "#000",
                         color: "#ffffffff",
@@ -160,6 +164,9 @@ const Products = () => {
                       Product Details
                     </Button>
                     <Button
+                      onClick={() => {
+                        setCartProducits(product);
+                      }}
                       size="small"
                       sx={{
                         backgroundColor: "#000",

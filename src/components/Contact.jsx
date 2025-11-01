@@ -43,8 +43,8 @@ export const Contact = () => {
                 <label>Message</label> <br />
                 <TextareaAutosize
                   aria-label="minimum height"
-                  maxRows={4}
-                  minLength={4}
+                  maxRows={3}
+                  minLength={3}
                   placeholder="Your Message"
                   style={{ width: 210 }}
                 />

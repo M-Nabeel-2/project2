@@ -99,25 +99,12 @@ const ProductsDetail = (props) => {
                         backgroundColor: "#000",
                         padding: 2,
                         borderRadius: 40,
-                        mt: 4,
-                        m: 1,
+                        justifyContent: "center",
+                        alignContent: "center",
+                        m: 3,
                       }}
                     >
                       Add To Cart
-                    </Button>
-                    <Button
-                      sx={{
-                        border: 1,
-                        borderColor: "#000",
-                        color: "#FFF",
-                        backgroundColor: "#000",
-                        padding: 2,
-                        borderRadius: 40,
-                        mt: 4,
-                        m: 1,
-                      }}
-                    >
-                      Go To Cart
                     </Button>
                   </Grid>
                 </Grid>

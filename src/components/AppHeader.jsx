@@ -17,6 +17,9 @@ import Button from "@mui/material/Button";
 import { Link, NavLink } from "react-router";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import Badge from "@mui/material/Badge";
+import ProductsDD from "../components/Products";
 
 const drawerWidth = 240;
 
@@ -78,6 +81,13 @@ function AppHeader(props) {
         </NavLink>
       </Box>
       <Box>
+        <Badge
+          badgeContent={ProductsDD?.length}
+          color="primary"
+          className="mx-5"
+        >
+          <AddShoppingCartIcon />
+        </Badge>
         <Button className="shrink-0" sx={{ border: 2, color: "#000", m: 1 }}>
           <NavLink to="/Login"> Login</NavLink>
         </Button>
@@ -161,15 +171,22 @@ function AppHeader(props) {
             </NavLink>
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <Badge
+              badgeContent={ProductsDD?.length}
+              color="primary"
+              className="mx-5"
+            >
+              <AddShoppingCartIcon />
+            </Badge>
             <Button
               className="shrink-0"
-              sx={{ border: 2, color: "#000", mr: 2 }}
+              sx={{ border: 2, color: "#000", mr: 1 }}
             >
               <NavLink to="/Login"> Login</NavLink>
             </Button>
             <Button
               className="shrink-0"
-              sx={{ border: 2, color: "#000", mr: 2 }}
+              sx={{ border: 2, color: "#000", mr: 1 }}
             >
               <NavLink to="/Register"> Register</NavLink>
             </Button>

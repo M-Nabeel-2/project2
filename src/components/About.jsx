@@ -64,9 +64,9 @@ const About = () => {
             Our Products
           </Typography>
         </Box>
-        <Box sx={{ flexGrow: 2, mt: 3 }}>
+        <Box sx={{ flexGrow: 2, m: 2 }}>
           <Grid container spacing={3.4}>
-            <Card sx={{ ml: 3 }}>
+            <Card>
               <Box sx={{ width: 320, border: 2 }}>
                 <img src={card1} />
               </Box>

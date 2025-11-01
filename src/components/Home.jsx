@@ -1,21 +1,29 @@
-import Box from "@mui/material/Box";
 import React from "react";
+import Box from "@mui/material/Box";
 import Products from "./Products.jsx";
 import { Hero } from "./Hero";
 import Hovercart from "./Hovercart";
-import { Contact } from "./Contact";
+import Cartlist from "./CartList/Cartlist.jsx";
+import { useState } from "react";
 
 export const Home = () => {
-  return (
-    
-    <Box className="relative">
-      <Hero />
-      <Products />
+  const [OpenCartlist, setOpenCartlist] = useState(false);
+  const [CartProducts, setCartProducits] = useState([]);
 
-      <Box className="absolute right-0 top-1/2">
-        <Hovercart />
+  const toggleDrawer = (newOpen) => () => {
+    setOpenCartlist(newOpen);
+  };
+  return (
+    <>
+      <Box className="relative">
+        <Hero />
+        <Products setCartProducits={setCartProducits} />
+
+        <Box onClick={toggleDrawer(true)} className="absolute right-0 top-1/2">
+          <Hovercart />
+        </Box>
       </Box>
-      <Contact />
-    </Box>
+      <Cartlist OpenCartlist={OpenCartlist} toggleDrawer={toggleDrawer} />
+    </>
   );
 };
