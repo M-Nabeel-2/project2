@@ -10,10 +10,12 @@ import ProductsD from "../utils/DummyData";
 import Grid from "@mui/material/Grid";
 import ProductsDetail from "./ProductsDetail";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addtocart } from "../store/slices/cartStoreSlice";
 
 const Products = (props) => {
   const { setCartProducits } = props;
+  const dispatch = useDispatch();
 
   const { Products: ProductsDD } = useSelector((state) => state.cart);
 
@@ -164,9 +166,7 @@ const Products = (props) => {
                       Product Details
                     </Button>
                     <Button
-                      onClick={() => {
-                        setCartProducits(product);
-                      }}
+                      onClick={() => dispatch(addtocart(product))}
                       size="small"
                       sx={{
                         backgroundColor: "#000",
