@@ -1,20 +1,14 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import { useState } from "react";
+
+import { useSelector } from "react-redux";
 
 export default function Cartlist(props) {
   const { OpenCartlist, toggleDrawer } = props;
-  
+  const cartList = useSelector((state) => state.cart);
+
+  console.log(cartList, "Addtocart");
+
   return (
     <div>
       <Drawer open={OpenCartlist} onClose={toggleDrawer(false)}>
@@ -23,7 +17,22 @@ export default function Cartlist(props) {
           role="presentation"
           onClick={toggleDrawer(false)}
         >
-          <h1>Products</h1>
+          {cartList?.length ? (
+            <div>
+              {cartList.map(() => {
+                return (
+                  <>
+                    <div>
+                      <img src={product?.img} alt="Product Image" />
+                    </div>
+                    <div>{product?.productName}</div>
+                  </>
+                );
+              })}
+            </div>
+          ) : (
+            <h1>No prodcuts</h1>
+          )}
         </Box>
       </Drawer>
     </div>
