@@ -11,17 +11,16 @@ import { Link } from "react-router";
 
 export default function Cartlist(props) {
   const { OpenCartlist, toggleDrawer } = props;
-  const cartList = useSelector((state) => state.cart);
+  const { cartList } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
-  console.log(cartList, "Addtocart");
 
   const totalPrice = cartList.reduce(
     (prev, curr) => curr.quantity * curr.price + prev,
     0
   );
 
-  console.log(totalPrice);
+  // console.log(totalPrice);
 
   return (
     <div>
@@ -32,9 +31,9 @@ export default function Cartlist(props) {
               {cartList.map((product) => {
                 return (
                   <>
-                    <div className="flex items-center">
+                    <div className="flex gap-10 m-2 items-center">
                       <img
-                        className="w-[90px]"
+                        className="w-[50px]  "
                         src={product?.img}
                         alt="Product Image"
                       />
@@ -52,7 +51,7 @@ export default function Cartlist(props) {
                           >
                             <RemoveIcon />
                           </Button>
-                          <Button size="small">Two</Button>
+                          <Button size="small">{product?.quantity}</Button>
                           <Button
                             size="small"
                             onClick={() => dispatch(addtocart(product))}
@@ -70,12 +69,15 @@ export default function Cartlist(props) {
             <h1>No prodcuts</h1>
           )}
           {cartList?.length ? (
-            <Button sx={{ border: 2, color: "#000", mr: 1, borderRadius: 4 }}>
+            <Button
+              fullwidth
+              sx={{ border: 2, color: "#000", m: 3, borderRadius: 4 }}
+            >
               Total Price ${totalPrice}
             </Button>
           ) : (
             <Link to="/Products">
-              <Button sx={{ border: 2, color: "#000", mr: 1, borderRadius: 4 }}>
+              <Button sx={{ border: 2, color: "#000", m: 3, borderRadius: 4 }}>
                 Add Items To Cart
               </Button>
             </Link>

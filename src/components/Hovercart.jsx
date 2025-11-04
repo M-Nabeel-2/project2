@@ -4,22 +4,31 @@ import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { createNodeImportMeta } from "vite/module-runner";
 import Button from "@mui/material/Button";
+import cartList from "./CartList/Cartlist";
+import { useSelector } from "react-redux";
 
 const Hovercart = () => {
+  // const totalPrice = cartList.reduce(
+  //   (prev, curr) => curr.quantity * curr.price + prev,
+  //   0
+  // );
+  const { cartList } = useSelector((state) => state.cart);
+
   const totalPrice = cartList.reduce(
     (prev, curr) => curr.quantity * curr.price + prev,
     0
   );
+
   return (
     <Box
       className="rounded-l-lg"
       sx={{
         backgroundColor: "#84857eff",
-        width: "100px",
-        height: "70px",
+        width: "120px",
+        height: "80px",
         padding: 3,
         borderLeft: 4,
-        position: "sticky",
+        position: "",
         display: "flex",
       }}
     >
@@ -27,9 +36,12 @@ const Hovercart = () => {
         variant="body2"
         sx={{ display: "flex", color: "#b9e91aff", justifyContent: "center" }}
       >
+        <Typography sx={{}}>({cartList.length})</Typography>
         <ShoppingCartIcon /> Cart
+        <br />
       </Button>
-      <Button>${totalPrice}</Button>
+
+      {/* <Button>${totalPrice}</Button> */}
     </Box>
   );
 };

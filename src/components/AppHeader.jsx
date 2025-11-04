@@ -1,30 +1,29 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link, NavLink } from "react-router";
-import Autocomplete from "@mui/material/Autocomplete";
-import TextField from "@mui/material/TextField";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Badge from "@mui/material/Badge";
 import ProductsDD from "../components/Products";
+import ProductsDetail from "./ProductsDetail";
+import { useSelector } from "react-redux";
 
 const drawerWidth = 240;
 
 function AppHeader(props) {
   const { window } = props;
+
+  const { Products: ProductsDummyData } = useSelector((state) => state.cart);
+  const { cartList } = useSelector((state) => state.cart);
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -80,12 +79,8 @@ function AppHeader(props) {
           Contact
         </NavLink>
       </Box>
-      <Box>
-        <Badge
-          badgeContent={ProductsDD?.length}
-          color="primary"
-          className="mx-4"
-        >
+      <Box sx={{ flexShrink: 2 }}>
+        <Badge badgeContent={cartList?.length} color="primary" className="mx-4">
           <AddShoppingCartIcon />
         </Badge>
         <Button className="shrink-0" sx={{ border: 2, color: "#000", m: 1 }}>
@@ -174,9 +169,9 @@ function AppHeader(props) {
               Contact
             </NavLink>
           </Box>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" }, flexShrink: 0 }}>
             <Badge
-              badgeContent={ProductsDD?.length}
+              badgeContent={cartList?.length}
               color="primary"
               className="mx-5"
             >

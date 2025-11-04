@@ -22,7 +22,7 @@ export const Hero = () => {
         <Typography
           variant="subtitle1"
           sx={{
-            fontSize: "20px",
+            fontSize: "1.3rem",
             fontFamily: "sans-serif",
             ml: 20,
             color: "whitesmoke",
@@ -34,12 +34,10 @@ export const Hero = () => {
         </Typography>
       </Box>
       <Box
-        className=" break-after-auto"
+        className=" "
         sx={{
-          width: "1300px",
-          mt: 15,
-          ml: 8,
-          mr: 7,
+          Width: "100%",
+          m: 10,
           borderRadius: 20,
         }}
       >

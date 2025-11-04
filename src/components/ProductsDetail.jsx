@@ -20,6 +20,8 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper/modules";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../store/slices/cartStoreSlice";
 
 const ProductsDetail = (props) => {
   const { open, handleClose, currentProductId } = props;
@@ -28,6 +30,7 @@ const ProductsDetail = (props) => {
     (product) => product.id === currentProductId
   );
   console.log(selectedProduct);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -103,6 +106,7 @@ const ProductsDetail = (props) => {
                         alignContent: "center",
                         m: 3,
                       }}
+                      onClick={() => dispatch(addtocart(product))}
                     >
                       Add To Cart
                     </Button>
