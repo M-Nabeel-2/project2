@@ -95,8 +95,8 @@ const Products = (props) => {
                       display: "flex",
                       justifyContent: "center",
                       alignContent: "center",
-                      ml: 8,
-                      mt: 3,
+                      padding: 2,
+                      m: 7,
                     }}
                     onClick={() => handleOpen(product)}
                     className="cursor-pointer"
@@ -142,7 +142,7 @@ const Products = (props) => {
                       alignContent: "center",
                     }}
                   >
-                    {product?.price}
+                    ${product?.price}
                   </Box>
                   <hr />
                   <CardActions

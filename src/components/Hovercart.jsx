@@ -6,6 +6,10 @@ import { createNodeImportMeta } from "vite/module-runner";
 import Button from "@mui/material/Button";
 
 const Hovercart = () => {
+  const totalPrice = cartList.reduce(
+    (prev, curr) => curr.quantity * curr.price + prev,
+    0
+  );
   return (
     <Box
       className="rounded-l-lg"
@@ -25,6 +29,7 @@ const Hovercart = () => {
       >
         <ShoppingCartIcon /> Cart
       </Button>
+      <Button>${totalPrice}</Button>
     </Box>
   );
 };

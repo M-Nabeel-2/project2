@@ -17,11 +17,19 @@ export const cartSlice = createSlice({
       existingitems
         ? (existingitems.quantity += 1)
         : state.cartList.push({ ...item, quantity: 1 });
+    },
+    romvefromCart: (state, actions) => {
+      const item = action.payload;
 
-     
+      const existingitems = state.cartList.find((prod) => prod.id === item.id);
+
+      if (existingitems) {
+         existingitems.quantity > 1 ?( existingitems.quantity -= 1)
+         : (state.cartList = state.cartList.filter((prod)=>prod.id !== item.id))
+      }
     },
   },
 });
 
-export const { addtocart } = cartSlice.actions;
+export const { addtocart, romvefromCart } = cartSlice.actions;
 export default cartSlice.reducer;

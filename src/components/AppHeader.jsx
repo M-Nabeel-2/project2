@@ -132,7 +132,7 @@ function AppHeader(props) {
               <Link to="Home"> Emporium Mart</Link>
             </Typography>
           </Box>
-          <Box className sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <NavLink
               to="/Home"
               className={({ isActive }) =>

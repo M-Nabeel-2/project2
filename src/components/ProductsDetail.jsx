@@ -47,46 +47,48 @@ const ProductsDetail = (props) => {
         <Fade in={open}>
           <Box fontStyle={styleproductDetail}>
             {selectedProduct ? (
-              <Box sx={{ flexGrow: 1 }}>
+              <Box sx={{ flexGrow: 1, width: "800px", height: "500px" }}>
                 <Grid container spacing={0}>
                   <Grid size={6}>
                     <Swiper
                       navigation={true}
                       modules={[Navigation]}
-                      className="mySwiper"
+                      className="mySwiper p-10"
                     >
                       <SwiperSlide>
                         <img
-                          className="w-58 m-30"
+                          className="w-50 m-28 "
                           src={selectedProduct.img}
-                          alt=""
+                          alt="1st Image"
                         />
                       </SwiperSlide>
                       <SwiperSlide>
-                        {" "}
                         <img
-                          className="w-58 m-30"
+                          className="w-50 m-28"
                           src={selectedProduct.img2}
-                          alt=""
+                          alt="2nd Image"
                         />
                       </SwiperSlide>
                     </Swiper>
                   </Grid>
                   <Grid size={6}>
-                    <Typography sx={{ mt: 10 }} variant="subtitle1">
-                      Mens Cloths
+                    <Typography
+                      sx={{ mt: 6, fontSize: "18px" }}
+                      variant="subtitle1"
+                    >
+                      {selectedProduct.catg}
                     </Typography>
                     <Typography variant="h4" sx={{ mt: 1 }}>
                       {selectedProduct.Fullname}
                     </Typography>
-                    <Typography variant="subtitle1">
+                    <Typography variant="subtitle2">
                       {selectedProduct.productRat}
-                      <StarIcon />
+                      <StarIcon sx={{ color: "#d8c517ff" }} />
                     </Typography>
-                    <Typography variant="h4" sx={{ mt: 4 }}>
-                      {selectedProduct.price}
+                    <Typography variant="h4" sx={{ mt: 2 }}>
+                      ${selectedProduct.price}
                     </Typography>
-                    <Typography variant="subtitle2" sx={{ mt: 3 }}>
+                    <Typography variant="subtitle2" sx={{ mt: 2 }}>
                       {selectedProduct.text}
                     </Typography>
                     <Button
