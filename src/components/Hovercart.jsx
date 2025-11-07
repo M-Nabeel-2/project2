@@ -34,7 +34,7 @@ const Hovercart = () => {
         variant="body2"
         sx={{ display: "flex", color: "#b9e91aff", justifyContent: "center" }}
       >
-        <Typography sx={{}}>({cartList.length})</Typography>
+        <Typography>({cartList.length})</Typography>
         <ShoppingCartIcon /> Cart
         <br />
       </Button>

@@ -6,15 +6,14 @@ import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardActions from "@mui/material/CardActions";
-import ProductsD from "../utils/DummyData";
 import Grid from "@mui/material/Grid";
 import ProductsDetail from "./ProductsDetail";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addtocart } from "../store/slices/cartStoreSlice";
+import { Link } from "react-router";
 
 const Products = (props) => {
-  const { setCartProducits } = props;
   const dispatch = useDispatch();
 
   const { Products: ProductsDD } = useSelector((state) => state.cart);

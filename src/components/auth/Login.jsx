@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
+import URLS from "../../API_EndPoint/API_URLS";
+import { axiosinstance } from "../../Api/axios";
 
 const initialUserData = {
   userName: "",
@@ -22,9 +24,10 @@ export const Login = () => {
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
-    defaulVfalues: initialUserData,
+    defaulValues: initialUserData,
     resolver: yupResolver(LoginSchema),
   });
   const LoginSubmit = async (data) => {
@@ -37,8 +40,11 @@ export const Login = () => {
       email: "john@mail.com",
       password: "changeme",
     };
-    let resp = await axios.post(URLS.login, payload);
+    let resp = await axiosinstance.post(URLS.login, payload);
 
+    localStorage.setItem("token", resp.data.access_token);
+
+    
     console.log(resp);
   };
 
@@ -69,7 +75,9 @@ export const Login = () => {
                   control={control}
                   render={({ field }) => <TextField {...field} />}
                 />
-                <p className="text-red-500 italic">{errors?.email?.message}</p>
+                <p className="text-red-500 italic">
+                  {errors?.userName?.message}
+                </p>
               </div>
             </div>
 

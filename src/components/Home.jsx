@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export const Home = () => {
   const [OpenCartlist, setOpenCartlist] = useState(false);
-  const [CartProducts, setCartProducits] = useState([]);
+  const [CartProducts, setCartProducts] = useState([]);
 
   const toggleDrawer = (newOpen) => () => {
     setOpenCartlist(newOpen);
@@ -17,9 +17,9 @@ export const Home = () => {
     <>
       <Box className="relative">
         <Hero />
-        <Products setCartProducits={setCartProducits} />
+        <Products setCartProducts={setCartProducts} />
 
-        <Box onClick={toggleDrawer(true)} className="absolute right-0 top-1/9">
+        <Box onClick={toggleDrawer(true)} className="absolute right-0 top-1/7">
           <Hovercart />
         </Box>
       </Box>

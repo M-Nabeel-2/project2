@@ -13,6 +13,8 @@ import { Link, NavLink } from "react-router";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
+import LoginIcon from "@mui/icons-material/Login";
+import AddReactionIcon from "@mui/icons-material/AddReaction";
 
 const drawerWidth = 240;
 
@@ -82,10 +84,14 @@ function AppHeader(props) {
           <AddShoppingCartIcon />
         </Badge>
         <Button className="shrink-0" sx={{ border: 2, color: "#000", m: 1 }}>
-          <NavLink to="/Login"> Login</NavLink>
+          <NavLink to="/Login">
+            <LoginIcon /> Login
+          </NavLink>
         </Button>
         <Button className="shrink-0" sx={{ border: 2, color: "#000", m: 1 }}>
-          <NavLink to="/Register"> Register</NavLink>
+          <NavLink to="/Register">
+            <AddReactionIcon /> Register
+          </NavLink>
         </Button>
       </Box>
     </Box>
@@ -179,13 +185,17 @@ function AppHeader(props) {
               className="shrink-0"
               sx={{ border: 2, color: "#000", mr: 1 }}
             >
-              <NavLink to="/Login"> Login</NavLink>
+              <NavLink to="/Login">
+                <LoginIcon /> Login
+              </NavLink>
             </Button>
             <Button
               className="shrink-0"
               sx={{ border: 2, color: "#000", mr: 1 }}
             >
-              <NavLink to="/Register"> Register</NavLink>
+              <NavLink to="/Register">
+                <AddReactionIcon /> Register
+              </NavLink>
             </Button>
           </Box>
         </Toolbar>
