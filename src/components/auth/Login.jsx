@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -6,15 +6,15 @@ import { Controller } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 
 const initialUserData = {
-  name: "",
-  email: "",
+  userName: "",
   password: "",
 };
 
 const LoginSchema = yup.object({
-  email: yup.string().required("Email is required"),
+  userName: yup.string().required("UserName is required"),
   password: yup.string().required("Password is required"),
 });
 
@@ -27,10 +27,20 @@ export const Login = () => {
     defaulVfalues: initialUserData,
     resolver: yupResolver(LoginSchema),
   });
-  const LoginSubmit = (data) => {
+  const LoginSubmit = async (data) => {
     console.log(data);
+    // const payload = {
+    //   userName: data.userName,
+    //   password: data.password,
+    // };
+    const payload = {
+      email: "john@mail.com",
+      password: "changeme",
+    };
+    let resp = await axios.post(URLS.login, payload);
+
+    console.log(resp);
   };
-  console.log(errors);
 
   return (
     <>
@@ -53,9 +63,9 @@ export const Login = () => {
           <div>
             <div className="flex justify-center">
               <div>
-                <label>Email </label> <br />
+                <label>UserName</label> <br />
                 <Controller
-                  name="email"
+                  name="userName"
                   control={control}
                   render={({ field }) => <TextField {...field} />}
                 />

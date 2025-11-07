@@ -74,16 +74,18 @@ const Products = (props) => {
             Electronics
           </Button>
         </Box>
-        <Box sx={{ flexGrow: 2 }}>
-          <Grid container spacing={4} marginLeft={10}>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={3} marginLeft={14}>
             {ProductsDD?.map((product) => {
               return (
                 <Card
                   key={product.id}
                   sx={{
-                    maxWidth: 280,
-                    ml: 8,
-                    mt: 3,
+                    maxWidth: 300,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    m: 2,
                     display: "-ms-flexbox",
                     boxShadow: "#000",
                   }}
@@ -91,12 +93,12 @@ const Products = (props) => {
                 >
                   <CardMedia
                     sx={{
-                      width: 180,
+                      width: 280,
                       display: "flex",
                       justifyContent: "center",
                       alignContent: "center",
                       padding: 2,
-                      m: 7,
+                      m: 3,
                     }}
                     onClick={() => handleOpen(product)}
                     className="cursor-pointer"

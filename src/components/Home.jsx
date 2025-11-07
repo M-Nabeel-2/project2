@@ -19,7 +19,7 @@ export const Home = () => {
         <Hero />
         <Products setCartProducits={setCartProducits} />
 
-        <Box onClick={toggleDrawer(true)} className="absolute right-0 top-1/2">
+        <Box onClick={toggleDrawer(true)} className="absolute right-0 top-1/9">
           <Hovercart />
         </Box>
       </Box>

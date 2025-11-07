@@ -50,7 +50,14 @@ const ProductsDetail = (props) => {
         <Fade in={open}>
           <Box fontStyle={styleproductDetail}>
             {selectedProduct ? (
-              <Box sx={{ flexGrow: 1, width: "800px", height: "500px" }}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  width: "800px",
+                  display: "-ms-flexbox",
+                  height: "500px",
+                }}
+              >
                 <Grid container spacing={0}>
                   <Grid size={6}>
                     <Swiper

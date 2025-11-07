@@ -2,9 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { createNodeImportMeta } from "vite/module-runner";
 import Button from "@mui/material/Button";
-import cartList from "./CartList/Cartlist";
 import { useSelector } from "react-redux";
 
 const Hovercart = () => {

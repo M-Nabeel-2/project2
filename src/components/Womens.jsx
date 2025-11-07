@@ -10,89 +10,91 @@ import Jac1 from "../assets/img/jacket1.webp";
 
 const womens = () => {
   return (
-    <Box>
-      <Card sx={{ maxWidth: 360, ml: 4, boxShadow: "#000" }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="80"
-          padding="40px"
-          image={Jac1}
-        />
-        <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            sx={{
-              padding: 2,
-              display: "center",
-              justifyContent: "center",
-              alignContent: "center",
-            }}
-          >
-            BIYLACLESEN ...
-          </Typography>
-          <Typography
+    <>
+      <Box>
+        <Card sx={{ maxWidth: 360, ml: 4, boxShadow: "#000" }}>
+          <CardMedia
+            component="img"
+            alt="green iguana"
+            height="80"
+            padding="40px"
+            image={Jac1}
+          />
+          <CardContent>
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="div"
+              sx={{
+                padding: 2,
+                display: "center",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              BIYLACLESEN ...
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "text.secondary",
+                padding: 2,
+                display: "center",
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+            >
+              Note:The Jackets is US standard size, Please choose size as your
+              usual wear Material: 100%...
+            </Typography>
+          </CardContent>
+          <hr />
+          <Box
             variant="body2"
             sx={{
-              color: "text.secondary",
-              padding: 2,
-              display: "center",
+              padding: 1,
+              display: "flex",
               justifyContent: "center",
               alignContent: "center",
             }}
           >
-            Note:The Jackets is US standard size, Please choose size as your
-            usual wear Material: 100%...
-          </Typography>
-        </CardContent>
-        <hr />
-        <Box
-          variant="body2"
-          sx={{
-            padding: 1,
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          $ 56.99
-        </Box>
-        <hr />
-        <CardActions
-          sx={{
-            padding: 2,
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          <Button
-            size="small"
+            $ 56.99
+          </Box>
+          <hr />
+          <CardActions
             sx={{
-              backgroundColor: "#000",
-              color: "#ffffffff",
-              padding: "8px",
-              borderRadius: "14px",
+              padding: 2,
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
             }}
           >
-            Buy Now
-          </Button>
-          <Button
-            size="small"
-            sx={{
-              backgroundColor: "#000",
-              color: "#ffffffff",
-              padding: "8px",
-              borderRadius: "14px",
-            }}
-          >
-            Add To Cart
-          </Button>
-        </CardActions>
-      </Card>
-    </Box>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#000",
+                color: "#ffffffff",
+                padding: "8px",
+                borderRadius: "14px",
+              }}
+            >
+              Buy Now
+            </Button>
+            <Button
+              size="small"
+              sx={{
+                backgroundColor: "#000",
+                color: "#ffffffff",
+                padding: "8px",
+                borderRadius: "14px",
+              }}
+            >
+              Add To Cart
+            </Button>
+          </CardActions>
+        </Card>
+      </Box>
+    </>
   );
 };
 

@@ -12,8 +12,6 @@ import Button from "@mui/material/Button";
 import { Link, NavLink } from "react-router";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Badge from "@mui/material/Badge";
-import ProductsDD from "../components/Products";
-import ProductsDetail from "./ProductsDetail";
 import { useSelector } from "react-redux";
 
 const drawerWidth = 240;

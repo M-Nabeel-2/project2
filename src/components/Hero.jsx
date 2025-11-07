@@ -10,11 +10,12 @@ export const Hero = () => {
         <Typography
           variant="h3"
           sx={{
-            fontSize: "40px",
+            fontSize: "1.8rem",
             lineHeight: "48px",
-            fontWeight: "Thin (100)",
+            fontWeight: "bold",
             ml: 20,
             color: "whitesmoke",
+            width:"50%"
           }}
         >
           New Season Arrivals
@@ -22,7 +23,7 @@ export const Hero = () => {
         <Typography
           variant="subtitle1"
           sx={{
-            fontSize: "1.3rem",
+            fontSize: "1rem",
             fontFamily: "sans-serif",
             ml: 20,
             color: "whitesmoke",
@@ -34,11 +35,10 @@ export const Hero = () => {
         </Typography>
       </Box>
       <Box
-        className=" "
         sx={{
-          Width: "100%",
-          m: 10,
-          borderRadius: 20,
+          width: "90%",
+          m: 13,
+          borderRadius: 30,
         }}
       >
         <img src={Hero1} />
