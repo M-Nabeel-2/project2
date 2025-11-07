@@ -27,6 +27,19 @@ const Products = (props) => {
   };
 
   const handleClose = () => setOpen(false);
+  const [filteredProducts, setFilteredProducts] = useState(ProductsDD);
+  const [activeCatg, setActiveCatg] = useState("All");
+
+  const filterByCatg = (catg) => {
+    setActiveCatg(catg);
+
+    if (catg === "All") {
+      setFilteredProducts(ProductsDD);
+    } else {
+      const filtered = ProductsDD.filter((item) => item.catg === catg);
+      setFilteredProducts(filtered);
+    }
+  };
 
   return (
     <>
@@ -54,28 +67,44 @@ const Products = (props) => {
           }}
         >
           <Button
-            className="shrink-0"
             sx={{ border: 2, color: "#000" }}
-            onClick={open}
+            onClick={() => filterByCatg("All")}
           >
             All
           </Button>
-          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+
+          <Button
+            sx={{ border: 2, color: "#000" }}
+            onClick={() => filterByCatg("MENS Clothes")}
+          >
             Men's Clothes
           </Button>
-          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+
+          <Button
+            sx={{ border: 2, color: "#000" }}
+            onClick={() => filterByCatg("Women's Clothes")}
+          >
             Women's Clothes
           </Button>
-          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+
+          <Button
+            sx={{ border: 2, color: "#000" }}
+            onClick={() => filterByCatg("Jewelery")}
+          >
             Jewelry
           </Button>
-          <Button className="shrink-0" sx={{ border: 2, color: "#000" }}>
+
+          <Button
+            sx={{ border: 2, color: "#000" }}
+            onClick={() => filterByCatg("Electronics")}
+          >
             Electronics
           </Button>
         </Box>
+
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={3} marginLeft={14}>
-            {ProductsDD?.map((product) => {
+            {filteredProducts?.map((product) => {
               return (
                 <Card
                   key={product.id}

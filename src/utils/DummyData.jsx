@@ -95,7 +95,7 @@ const ProductsD = [
       "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     productName: "John Hardy...",
     text: "From our Legends Collection, the Naga was inspired by the mythical water dragon that prote...",
-    catg: "Jewelery ",
+    catg: "Jewelery",
     productRat: "Rating 4.6 ",
   },
   {
@@ -106,7 +106,7 @@ const ProductsD = [
     Fullname: "Solid Gold Petite Micropave",
     productName: "Solid Gold...",
     text: "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by ...",
-    catg: "Jewelery ",
+    catg: "Jewelery",
     productRat: "Rating 3.9 ",
   },
   {
@@ -117,7 +117,7 @@ const ProductsD = [
     Fullname: "White Gold Plated Princess",
     productName: "White Gold...",
     text: "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil ..",
-    catg: "Jewelery ",
+    catg: "Jewelery",
     productRat: "Rating 3",
   },
   {
@@ -128,7 +128,7 @@ const ProductsD = [
     Fullname: "Pierced Owl Rose Gold Plated Stainless Steel Double",
     productName: "Pierced Owl...",
     text: "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel...",
-    catg: "Jewelery ",
+    catg: "Jewelery",
     productRat: "Rating 1.9 ",
   },
   {
@@ -150,7 +150,7 @@ const ProductsD = [
     Fullname: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
     productName: "SanDisk SSD...",
     text: "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5...",
-    catg: "Electronics ",
+    catg: "Electronics",
     productRat: "Rating 2.9 ",
   },
   {
@@ -174,7 +174,7 @@ const ProductsD = [
       "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive  ",
     productName: "WD 4TB Gaming...",
     text: "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with hi...",
-    catg: "Electronics ",
+    catg: "Electronics",
     productRat: "Rating 4.8",
   },
   {
@@ -208,7 +208,7 @@ const ProductsD = [
     Fullname: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     productName: "BIYLACLESEN...",
     text: "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100%...",
-    catg: " Women's Clothes",
+    catg: "Women's Clothes",
     productRat: "Rating 2.6 ",
   },
   {
