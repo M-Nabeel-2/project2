@@ -5,9 +5,18 @@ export const axiosinstance = axios.create({
 });
 
 // request
-axiosinstance.interceptors.request.use((config) => {
+axiosinstance.interceptors.request.use(() => {
   const token = localStorage.getItem("token");
 });
 if (token) {
   config.header.Authorization = `Bearer ${token}`;
 }
+
+// response
+
+axiosinstance.interceptors.response.use(
+  (resp) => {
+    return resp;
+  },
+  () => {}
+);
