@@ -21,7 +21,6 @@ const drawerWidth = 240;
 function AppHeader(props) {
   const { window } = props;
 
-  const { Products: ProductsDummyData } = useSelector((state) => state.cart);
   const { cartList } = useSelector((state) => state.cart);
 
   const [mobileOpen, setMobileOpen] = React.useState(false);

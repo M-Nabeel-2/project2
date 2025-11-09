@@ -60,7 +60,7 @@ const ProductsDetail = (props) => {
                 }}
               >
                 <Grid container spacing={0}>
-                  <Grid size={6}>
+                  <Grid size={6} item xs={12} md={6}>
                     <Swiper
                       navigation={true}
                       modules={[Navigation]}
@@ -68,7 +68,7 @@ const ProductsDetail = (props) => {
                     >
                       <SwiperSlide>
                         <img
-                          className="w-50 m-28 "
+                          className="w-50 m-28"
                           src={selectedProduct.img}
                           alt="1st Image"
                         />
@@ -82,9 +82,9 @@ const ProductsDetail = (props) => {
                       </SwiperSlide>
                     </Swiper>
                   </Grid>
-                  <Grid size={6}>
+                  <Grid size={6} item xs={12} md={6}>
                     <Typography
-                      sx={{ mt: 6, fontSize: "18px" }}
+                      sx={{ mt: 4, fontSize: "18px" }}
                       variant="subtitle1"
                     >
                       {selectedProduct.catg}
@@ -96,10 +96,10 @@ const ProductsDetail = (props) => {
                       {selectedProduct.productRat}
                       <StarIcon sx={{ color: "#d8c517ff" }} />
                     </Typography>
-                    <Typography variant="h4" sx={{ mt: 2 }}>
+                    <Typography variant="h4" sx={{ mt: 1 }}>
                       ${selectedProduct.price}
                     </Typography>
-                    <Typography variant="subtitle2" sx={{ mt: 2 }}>
+                    <Typography variant="subtitle2" sx={{ mt: 1 }}>
                       {selectedProduct.text}
                     </Typography>
                     <Button

@@ -6,16 +6,29 @@ import Typography from "@mui/material/Typography";
 export const Hero = () => {
   return (
     <Box className="relative">
-      <Box className="absolute  top-1/3">
+      <Box
+        className="absolute  top-1/3"
+        sx={{
+          top: "50%",
+          transform: "translateY(-50%)",
+          px: { xs: 2, md: 6 },
+          py: { xs: 2, md: 3 },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          left: { xs: "20%", md: "12%" },
+          width: { xs: "70%", md: "70%" },
+        }}
+      >
         <Typography
           variant="h3"
           sx={{
-            fontSize: "1.8rem",
-            lineHeight: "48px",
+            fontSize: { xs: "1.4rem", md: "2.2rem" },
+            lineHeight: "1.15",
             fontWeight: "bold",
-            ml: 20,
-            color: "whitesmoke",
-            width:"50%"
+            mb: 2,
+            color: "#f6f6f6",
+            letterSpacing: "0.03em",
           }}
         >
           New Season Arrivals
@@ -23,11 +36,11 @@ export const Hero = () => {
         <Typography
           variant="subtitle1"
           sx={{
-            fontSize: "1rem",
-            fontFamily: "sans-serif",
-            ml: 20,
-            color: "whitesmoke",
-            display: { xs: "none", md: "flex" },
+            fontSize: { xs: "0.95rem", md: "1.2rem" },
+            color: "#e4e4e4",
+            mb: 1,
+            display: { xs: "none", md: "block" },
+            fontFamily: "inherit",
           }}
         >
           This is a wider card with supporting text below as a natural lead-in
@@ -36,9 +49,13 @@ export const Hero = () => {
       </Box>
       <Box
         sx={{
-          width: "90%",
-          m: 13,
-          borderRadius: 30,
+          minHeight: { xs: 220, md: 400 },
+          width: "80%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          my: 10,
+          mx: 6,
         }}
       >
         <img src={Hero1} />
