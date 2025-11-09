@@ -16,7 +16,6 @@ import { addtocart } from "../store/slices/cartStoreSlice";
 const Products = (props) => {
   const dispatch = useDispatch();
   const { Products: ProductsDD } = useSelector((state) => state.cart);
-
   const [open, setOpen] = useState(false);
   const [currentProductId, setcurrentProductId] = useState({});
   const [filteredProducts, setFilteredProducts] = useState(ProductsDD);

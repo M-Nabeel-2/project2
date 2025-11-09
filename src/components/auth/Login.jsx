@@ -39,8 +39,8 @@ export const Login = () => {
       email: "john@mail.com",
       password: "changeme",
     };
-    let resp = await axios.post(URLS.login, payload);
 
+    let resp = await axios.post(URLS.login, payload);
     localStorage.setItem("token", resp.data.access_token);
 
     console.log(resp);
