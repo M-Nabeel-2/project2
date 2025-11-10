@@ -6,10 +6,6 @@ import Button from "@mui/material/Button";
 import { useSelector } from "react-redux";
 
 const Hovercart = () => {
-  // const totalPrice = cartList.reduce(
-  //   (prev, curr) => curr.quantity * curr.price + prev,
-  //   0
-  // );
   const { cartList } = useSelector((state) => state.cart);
 
   const totalPrice = cartList.reduce(

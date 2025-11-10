@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
-/* Desktop styles (default) */
-.container {
-  padding: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/* dispaly */
+.flex {
+  display: flex;
+}
+/*colors */
+.bg-black {
+  background-color: black;
+}
+.bg-white {
+  background-color: white;
 }
 
-/* Mobile styles */
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 20px;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+/* padding */
+.padding-16 {
+  padding: 16px;
 }

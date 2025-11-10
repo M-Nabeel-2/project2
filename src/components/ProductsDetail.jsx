@@ -4,25 +4,17 @@ import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
-import styleproductDetail from "../assets/style";
 import ProductsD from "../utils/DummyData";
 import Grid from "@mui/material/Grid";
 import StarIcon from "@mui/icons-material/Star";
 import Button from "@mui/material/Button";
-
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
-// import required modules
 import { Navigation } from "swiper/modules";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useDispatch } from "react-redux";
 import { addtocart } from "../store/slices/cartStoreSlice";
-import Products from "./Products";
 
 const ProductsDetail = (props) => {
   const { open, handleClose, currentProductId } = props;
@@ -30,7 +22,6 @@ const ProductsDetail = (props) => {
   const selectedProduct = ProductsD.find(
     (product) => product.id === currentProductId
   );
-  console.log(selectedProduct);
   const dispatch = useDispatch();
 
   return (
@@ -49,84 +40,103 @@ const ProductsDetail = (props) => {
         }}
       >
         <Fade in={open}>
-          <Box fontStyle={styleproductDetail}>
+          <div
+            className="absolute top-1/2 left-1/2 bg-white 
+          shadow-lg rounded-xl outline-none max-w-[95vw] w-[90vw] 
+          md:w-[800px] max-h-[90vh] transform -translate-x-1/2
+           -translate-y-1/2 flex flex-col overflow-y-auto"
+          >
             {selectedProduct ? (
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  width: "800px",
-                  display: "-ms-flexbox",
-                  height: "500px",
-                }}
-              >
-                <Grid container spacing={0}>
-                  <Grid size={6} item xs={12} md={6}>
-                    <Swiper
-                      navigation={true}
-                      modules={[Navigation]}
-                      className="mySwiper p-10"
-                    >
-                      <SwiperSlide>
-                        <img
-                          className="w-50 m-28"
-                          src={selectedProduct.img}
-                          alt="1st Image"
-                        />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img
-                          className="w-50 m-28"
-                          src={selectedProduct.img2}
-                          alt="2nd Image"
-                        />
-                      </SwiperSlide>
-                    </Swiper>
-                  </Grid>
-                  <Grid size={6} item xs={12} md={6}>
+              <div className="flex flex-col md:flex-row w-full">
+                {/* Images Section */}
+                <div className="flex items-center justify-center p-4 md:p-8 md:border-r border-gray-200 w-full md:w-1/2 min-h-[240px]">
+                  <Swiper navigation modules={[Navigation]} className="w-full">
+                    <SwiperSlide>
+                      <img
+                        src={selectedProduct.img}
+                        alt="1st Image"
+                        className="w-full md:w-4/5 object-contain mx-auto"
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src={selectedProduct.img2}
+                        alt="2nd Image"
+                        className="w-full md:w-4/5 object-contain mx-auto"
+                      />
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+                {/* Details Section */}
+                <div className="flex flex-col justify-between gap-3 p-4 md:p-8 w-full md:w-1/2">
+                  <div>
                     <Typography
-                      sx={{ mt: 4, fontSize: "18px" }}
                       variant="subtitle1"
+                      className="mt-2 text-sm md:text-lg"
                     >
                       {selectedProduct.catg}
                     </Typography>
-                    <Typography variant="h4" sx={{ mt: 1 }}>
+                    <Typography
+                      variant="h5"
+                      className="mt-1 text-lg md:text-2xl font-bold"
+                    >
                       {selectedProduct.Fullname}
                     </Typography>
-                    <Typography variant="subtitle2">
-                      {selectedProduct.productRat}
-                      <StarIcon sx={{ color: "#d8c517ff" }} />
-                    </Typography>
-                    <Typography variant="h4" sx={{ mt: 1 }}>
+                    <div className="flex items-center gap-2">
+                      <Typography
+                        variant="subtitle2"
+                        className="text-xs md:text-base"
+                      >
+                        {selectedProduct.productRat}
+                      </Typography>
+                      <StarIcon className="text-yellow-500 text-base md:text-lg" />
+                    </div>
+                    <Typography
+                      variant="h5"
+                      className="mt-2 text-xl md:text-2xl"
+                    >
                       ${selectedProduct.price}
                     </Typography>
-                    <Typography variant="subtitle2" sx={{ mt: 1 }}>
+                    <Typography
+                      variant="body2"
+                      className="mt-2 text-xs md:text-base text-gray-400"
+                    >
                       {selectedProduct.text}
                     </Typography>
-                    <Button
-                      sx={{
-                        border: 1,
-                        borderColor: "#000",
-                        color: "#FFF",
-                        backgroundColor: "#000",
-                        padding: 2,
-                        borderRadius: 40,
-                        justifyContent: "center",
-                        alignContent: "center",
-                        m: 3,
-                      }}
-                      onClick={() => dispatch(addtocart(Products))}
-                    >
-                      Add To Cart
-                    </Button>
-                  </Grid>
-                </Grid>
-              </Box>
+                  </div>
+                  <Button
+                    fullWidth
+                    sx={{
+                      background: "#ffffffff",
+                      color: "#000000ff",
+                      width: "8rem",
+                      paddingLeft: "6px",
+                      paddingRight: "6px",
+                      paddingBottom: "2px",
+                      paddingtop: "2px",
+                      borderRadius: "3rem",
+                      marginTop: "2rem",
+                      textTransform: "none",
+                      transition: "all 0.2s",
+                      border: "2px solid #1a1a1a",
+                      "&:hover": {
+                        background: "#000000ff",
+                        color: "#ffffffff",
+                        border: "2rem bold",
+                      },
+                    }}
+                    onClick={() => dispatch(addtocart(selectedProduct))}
+                  >
+                    Add To Cart
+                  </Button>
+                </div>
+              </div>
             ) : (
-              <Box className="p-20 flex justify-center">
+              <div className="flex justify-center items-center p-10">
                 <CircularProgress />
-              </Box>
+              </div>
             )}
-          </Box>
+          </div>
         </Fade>
       </Modal>
     </>

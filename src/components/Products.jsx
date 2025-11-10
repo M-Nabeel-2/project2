@@ -33,7 +33,9 @@ const Products = (props) => {
     if (catg === "All") {
       setFilteredProducts(ProductsDD);
     } else {
-      const filtered = ProductsDD.filter((item) => item.catg === catg);
+      const filtered = ProductsDD.filter((item) => {
+        item.catg === catg;
+      });
       setFilteredProducts(filtered);
     }
   };
@@ -240,11 +242,19 @@ const Products = (props) => {
                       size="small"
                       onClick={() => handleOpen(product)}
                       sx={{
-                        background: "#1a1a1a",
-                        color: "#fff",
+                        background: "#ffffffff",
+                        color: "#000000ff",
                         borderRadius: "3rem",
                         px: 2,
                         mx: 1,
+                        border: "2px solid #1a1a1a",
+                        textTransform: "none",
+                        transition: "all 0.2s",
+                        "&:hover": {
+                          background: "#000000ff",
+                          color: "#ffffffff",
+                          border: "2rem bold",
+                        },
                       }}
                     >
                       Product Details
@@ -253,11 +263,20 @@ const Products = (props) => {
                       size="small"
                       onClick={() => dispatch(addtocart(product))}
                       sx={{
-                        background: "#1a1a1a",
-                        color: "#fff",
+                        background: "#ffffffff",
+                        color: "#000000ff",
                         borderRadius: "3rem",
                         px: 2,
                         mx: 1,
+                        border: "2px solid #1a1a1a",
+                        textTransform: "none",
+                        transition: "all 0.2s",
+                        "&:hover": {
+                          background: "#000000ff",
+                          color: "#ffffffff",
+                          border: "2rem bold",
+                          borderColor: "#000000ff",
+                        },
                       }}
                     >
                       Add To Cart
