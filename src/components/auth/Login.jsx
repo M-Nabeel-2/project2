@@ -11,17 +11,17 @@ import URLS from "../../API_EndPoint/API_URLS";
 import { useState } from "react";
 
 const initialUserData = {
-  userName: "",
+  email: "",
   password: "",
 };
 
 const LoginSchema = yup.object({
-  userName: yup.string().required("UserName is required"),
+  email: yup.string().required("Email is required"),
   password: yup.string().required("Password is required"),
 });
 
 export const Login = () => {
-  // const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
   const {
     control,
@@ -34,7 +34,6 @@ export const Login = () => {
   });
   const LoginSubmit = async (data) => {
     console.log(data);
-
     const payload = {
       email: "john@mail.com",
       password: "changeme",
@@ -45,14 +44,12 @@ export const Login = () => {
 
     console.log(resp);
 
-    // if (
-    //   data.userName == payload.userName &&
-    //   data.password == payload.password
-    // ) {
-    //   setMessage("Welcome To Emporium");
-    // } else {
-    //   setMessage("Fill The Fields Correctly");
-    // }
+    if (data.email === payload.email && data.password === payload.password) {
+      setMessage("Welcome To Emporium");
+      reset(initialUserData);
+    } else {
+      setMessage("Fill The Fields Correctly");
+    }
   };
 
   return (
@@ -76,15 +73,13 @@ export const Login = () => {
           <div>
             <div className="flex justify-center">
               <div>
-                <label>UserName</label> <br />
+                <label>Email</label> <br />
                 <Controller
-                  name="userName"
+                  name="email"
                   control={control}
                   render={({ field }) => <TextField {...field} />}
                 />
-                <p className="text-red-500 italic">
-                  {errors?.userName?.message}
-                </p>
+                <p className="text-red-500 italic">{errors?.email?.message}</p>
               </div>
             </div>
 
@@ -106,7 +101,9 @@ export const Login = () => {
                 Login
               </Button>
             </div>
-            {/* <div className="text-center mt-2 text-red-400 font-bold ">{message}</div> */}
+            <div className="text-center mt-2 text-red-400 font-bold ">
+              {message}
+            </div>
           </div>
         </form>
       </Card>

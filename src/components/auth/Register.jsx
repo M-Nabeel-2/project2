@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Controller } from "react-hook-form";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -20,18 +19,35 @@ const RegisterSchema = yup.object({
 });
 
 export const Register = () => {
+  const [message, setMessage] = useState("");
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
-    defaulVfalues: initialUserData,
+    defaultValues: initialUserData,
     resolver: yupResolver(RegisterSchema),
   });
+
   const RegisterSubmit = (data) => {
-    console.log(data);
+    const payload = {
+      name: "john",
+      email: "john@mail.com",
+      password: "changeme",
+    };
+
+    if (
+      data.name === payload.name &&
+      data.email === payload.email &&
+      data.password === payload.password
+    ) {
+      setMessage("Thanks For Registration");
+      reset(initialUserData);
+    } else {
+      setMessage("Fill The Fields Correctly");
+    }
   };
-  console.log(errors);
 
   return (
     <>
@@ -63,7 +79,6 @@ export const Register = () => {
                 <p className="text-red-500 italic">{errors?.name?.message}</p>
               </div>
             </div>
-
             <div className="flex justify-center">
               <div>
                 <label>Email </label> <br />
@@ -75,7 +90,6 @@ export const Register = () => {
                 <p className="text-red-500 italic">{errors?.email?.message}</p>
               </div>
             </div>
-
             <div className="flex justify-center">
               <div>
                 <label>Password</label> <br />
@@ -93,6 +107,9 @@ export const Register = () => {
               <Button type="submit" sx={{ border: 2, color: "#000" }}>
                 Register
               </Button>
+            </div>
+            <div className="text-center mt-2 text-green-400 font-bold">
+              {message}
             </div>
           </div>
         </form>
