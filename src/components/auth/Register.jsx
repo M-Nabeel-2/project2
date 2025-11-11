@@ -108,7 +108,7 @@ export const Register = () => {
                 Register
               </Button>
             </div>
-            <div className="text-center mt-2 text-green-400 font-bold">
+            <div className="text-center mt-2 text-black-400 font-bold">
               {message}
             </div>
           </div>

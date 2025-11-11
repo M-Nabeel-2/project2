@@ -33,9 +33,7 @@ const Products = (props) => {
     if (catg === "All") {
       setFilteredProducts(ProductsDD);
     } else {
-      const filtered = ProductsDD.filter((item) => {
-        item.catg === catg;
-      });
+      const filtered = ProductsDD.filter((item) => item.catg === catg);
       setFilteredProducts(filtered);
     }
   };
