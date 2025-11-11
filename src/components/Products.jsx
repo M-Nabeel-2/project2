@@ -234,9 +234,11 @@ const Products = (props) => {
                       {product?.text1}
                     </Typography>
                   </CardContent>
+                  <hr />
                   <Typography variant="h6" sx={{ margin: "8px 0" }}>
                     ${product?.price}
                   </Typography>
+                  <hr />
                   <CardActions sx={{ justifyContent: "center", pb: 2 }}>
                     <Button
                       size="small"

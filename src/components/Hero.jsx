@@ -49,8 +49,8 @@ export const Hero = () => {
       </Box>
       <Box
         sx={{
-          minHeight: { xs: 220, md: 400 },
-          width: "80%",
+          minHeight: { xs: 240, md: 400 },
+          // width: "80%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

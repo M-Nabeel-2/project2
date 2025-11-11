@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import URLS from "../../API_EndPoint/API_URLS";
+import { useState } from "react";
 
 const initialUserData = {
   userName: "",
@@ -20,21 +21,20 @@ const LoginSchema = yup.object({
 });
 
 export const Login = () => {
+  // const [message, setMessage] = useState("");
+
   const {
     control,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm({
-    defaulValues: initialUserData,
+    defaultValues: initialUserData,
     resolver: yupResolver(LoginSchema),
   });
   const LoginSubmit = async (data) => {
     console.log(data);
-    // const payload = {
-    //   userName: data.userName,
-    //   password: data.password,
-    // };
+
     const payload = {
       email: "john@mail.com",
       password: "changeme",
@@ -44,6 +44,15 @@ export const Login = () => {
     localStorage.setItem("token", resp.data.access_token);
 
     console.log(resp);
+
+    // if (
+    //   data.userName == payload.userName &&
+    //   data.password == payload.password
+    // ) {
+    //   setMessage("Welcome To Emporium");
+    // } else {
+    //   setMessage("Fill The Fields Correctly");
+    // }
   };
 
   return (
@@ -97,6 +106,7 @@ export const Login = () => {
                 Login
               </Button>
             </div>
+            {/* <div className="text-center mt-2 text-red-400 font-bold ">{message}</div> */}
           </div>
         </form>
       </Card>
