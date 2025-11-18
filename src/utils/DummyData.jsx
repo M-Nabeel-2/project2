@@ -1,5 +1,5 @@
 import Rating from "@mui/material/Rating";
-// import Bag from "../assets/img/Bag.webp";
+import Bag from "../assets/img/Bag.webp";
 import shirt1 from "../assets/img/shirt1.webp";
 import shirt2 from "../assets/img/shirt2.webp";
 import jew1 from "../assets/img/jew1.webp";
