@@ -208,7 +208,7 @@ const Products = (props) => {
                       cursor: "pointer",
                     }}
                     component="img"
-                    image={product?.img}
+                    image={product?.img2}
                     onClick={() => handleOpen(product)}
                   />
                   <CardContent sx={{ width: "100%" }}>
