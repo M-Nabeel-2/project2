@@ -1,5 +1,5 @@
 import Rating from "@mui/material/Rating";
-import Bag from "../assets/img/Bag.webp";
+
 import shirt1 from "../assets/img/shirt1.webp";
 import shirt2 from "../assets/img/shirt2.webp";
 import jew1 from "../assets/img/jew1.webp";
@@ -44,7 +44,7 @@ import wm6a from "../assets/img/wm6a.webp";
 const ProductsD = [
   {
     id: 1,
-    img: Bag,
+    
     Fullname: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     price: 109.99,
     productName: "Fjallraven...",
