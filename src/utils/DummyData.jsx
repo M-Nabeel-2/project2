@@ -44,7 +44,7 @@ import wm6a from "../assets/img/wm6a.webp";
 const ProductsD = [
   {
     id: 1,
-    
+
     Fullname: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     price: 109.99,
     productName: "Fjallraven...",
