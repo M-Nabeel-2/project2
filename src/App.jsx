@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Contact } from "./components/Contact";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { Layout } from "./components/Layout";
@@ -14,7 +13,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path="/Home" element={<Home />}></Route>
+            <Route
+              path="/Home"
+              element={
+                <h1>
+                  <Home />
+                </h1>
+              }
+            ></Route>
             <Route
               path="/Products"
               element={
