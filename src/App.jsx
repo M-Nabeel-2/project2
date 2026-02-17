@@ -14,6 +14,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route
+              path="/"
+              element={
+                <h1>
+                  <Home />
+                </h1>
+              }
+            ></Route>
+            <Route
               path="/Home"
               element={
                 <h1>
